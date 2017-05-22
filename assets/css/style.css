@@ -1,0 +1,19 @@
+body {
+	margin-left: 15px;
+}
+
+h1 {
+	text-align: center;
+}
+
+#rightorwrong,
+#start {
+	text-align: center;
+	margin-top: 50px;
+}
+
+button {
+	width: 500px;
+	background: teal;
+	color: white;
+}
