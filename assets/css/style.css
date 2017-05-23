@@ -17,3 +17,11 @@ button {
 	background: teal;
 	color: white;
 }
+
+#q-and-a {
+	text-align: center;
+}
+
+input {
+	text-align:left;
+}
