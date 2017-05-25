@@ -9,31 +9,71 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+	<link href="https://fonts.googleapis.com/css?family=Barrio|Nunito|Raleway" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
 
 
 </head>
 <body>
 
-<h1>ONE HIT WONDER TRIVIA</h1>
 
-<div id="start">
-	<button class="startbtn">Begin Game</button>
-</div>
 
-<div id="countdown"></div>
+<header class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Doggo Trivia Game</h1>
+		</div>
+	</div>
+</header>
 
-<div id="question"></div>
-<div id="choices"></div>
-<div id="submit"></div>
+<div class="container" id="maincontent">
+	<div class="row">
+		
+		<div class="col-md-1">
 
-<div id="images"></div>
-<div id="qresult"></div>
+			<img class="pawprint" width="200" src="assets/images/pawprint.png">
 
-<div id="lastpage">
-	<div id="final-result"></div>
-	<div id="correct"></div><div id="incorrect"></div>
+		</div>
+
+		<div class="col-md-7 col-md-offset-2">
+
+			<div id="start">
+				<h2>Instructions</h2>
+				<h3>Test your pupper doggo smarts with this 10 question trivia game!</h3>
+				<ul>
+					<li>Once you click the "begin game" button below a question will appear in this space.</li>
+					<li>You will have 20 seconds to make a decision and hit "submit"</li>
+					<li>The correct answer and a photo will display when your time is up or you hit "submit"</li>
+					<li>A new question will load automatically</li>
+				</ul>
+
+				<button class="startbtn">Begin Game</button>
+			</div>
+
+			<div id="question"></div>
+			<div id="choices"></div>
+			<div id="submit"></div>
+
+			<div id="qresult"></div>
+			<img id="images" src="">
+
+			<div id="lastpage">
+				<div id="final-result"></div>
+				<div id="correct"></div><div id="incorrect"></div>
+				<div id="tryagain"></div>
+			</div>
+		</div>
+
+		<div class="col-md-2">
+
+			<div id="countdown"></div>
+
+		</div>
+
+	</div>
 </div>
 
 

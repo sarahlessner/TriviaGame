@@ -4,10 +4,16 @@
 //value for correct answer at 5
 var qnaArray = [
 
-	["Who sang x?", "Band Ax", "Band Bx", "Band Cx", "Band Dx", "1"],
-	["Who sang y?", "Band Ay", "Band By", "Band Cy", "Band Dy", "2"],
-	["Who sang z?", "Band Az", "Band Bz", "Band Cz", "Band Dz", "3"],
-	["Who sang q?", "Band Aq", "Band Bq", "Band Cq", "Band Dq", "4"]
+	["What is the most popular dog breed in the United States?", "Golden Retriever", "Bulldog", "Maltese", "Labrador Retriever", "4", "assets/images/blacklab.png"],
+	["Which breed of dog is commonly associated with firehouses?", "Dalmatian", "German Shepherd", "Rottweiler", "Pitbull", "1", "assets/images/dalmatian.png"],
+	["How many teeth do dogs typically have?", "24", "38", "42", "32", "3", "assets/images/puppy.png"],
+	["The Chihuahua is a breed of dog believed to originate from what country?", "Canada", "Mexico", "Argentina", "Australia", "2", "assets/images/ratdog.png"],
+	["Which command is most commonly taught to dogs in training?", "Stay", "Sit", "Come", "Down", "2", "assets/images/sit.png"],
+	["Through which part of the body do dogs sweat?", "Mouth", "Ears", "Nose", "Paws", "4", "assets/images/dogpaw.png"],
+	["Which breed is the preferred breed of the Queen of England?", "Pomeranian", "Poodle", "Corgi", "Bichon Frise", "3", "assets/images/corgi.png"],
+	["Which dog breed is known for their black tongue?", "Chow Chow", "Husky", "Weimaraner", "Samoyed", "1", "assets/images/chow.png"],
+	["Which breed was once known as St. John's Newfoundland?", "Golden Retriever", "Labrador", "Newfoundland", "Irish Setter", "2", "assets/images/choclab.png"],
+	["Puppies are delivered how many weeks after conception?", "36 weeks", "16 weeks", "9 weeks", "25 weeks", "3", "assets/images/huskypups.png"]
 
 ];
 
@@ -39,6 +45,7 @@ function beginGame() {
 	$("#final-result").empty();
 	//hide new game button
 	$("#start").empty();
+	$("#tryagain").empty();
 	//calls function for a new question/answer pair
 	displayQ();
 }
@@ -48,13 +55,14 @@ function beginGame() {
 function displayQ() {
 
 	$("#qresult").empty();
+	$("#images").attr("src","");
 
 	if (questionIdx === qnaArray.length) {
 		$("#countdown").empty();
 		$("#correct").append("You got "+correct+" questions right");
 		$("#incorrect").append("You got "+incorrect+" questions wrong");
 		$("#final-result").text("GAME OVER!");
-		$("#start").html("<button onclick='beginGame()'>Try Again</button>");
+		$("#tryagain").html("<button class='startbtn' onclick='beginGame()'>Try Again?</button>");
 	}
 
 	else {
@@ -64,7 +72,7 @@ function displayQ() {
 		//display question and answers to user
 		$("#question").html("<h2>"+question+"</h2>");
 		
-		for (i=1; i<(qnaArray[questionIdx].length-1); i++) {
+		for (i=1; i<(qnaArray[questionIdx].length-2); i++) {
 
 			var ans = qnaArray[questionIdx][i];
 
@@ -78,6 +86,7 @@ function displayQ() {
 
 		//set countdown variable
 		countdown = 20;
+		$("#countdown").css("font-size", (150-(5*countdown)));
 		//set interval for countdown
 		timer = setInterval(hourGlass, 1000);
 		//display countdown in html
@@ -95,10 +104,12 @@ function hourGlass() {
 	//decrement "countdown"
 	countdown--;
 	//display "countdown"
+	$("#countdown").css("font-size", (150-(5*countdown)));
 	$("#countdown").text(countdown);
 	//if countdown is 0 clear the interval, increase incorrect count and display result
 	if (countdown === 0) {
-		$("#qresult").html("TIME'S UP!");
+		$("#qresult").html("TIME'S UP! ");
+		$("#images").attr("src",qnaArray[questionIdx][6]);
 		clearInterval(timer);
 		$("#question").empty();
 		$("#choices").empty();
@@ -109,8 +120,6 @@ function hourGlass() {
 
 
 }
-
-
 
 //create an on click event for answer submission
 function submitAnswer() {
@@ -132,8 +141,9 @@ function submitAnswer() {
 		$("#question").empty();
 		$("#choices").empty();
 		$("#submit").empty();
-		$("#qresult").text("CORRECT!");
-		//display photo at questionIdx
+		$("#qresult").text("CORRECT! ");
+		//display photo at questionIdx - photos at last index 6
+		$("#images").attr("src",qnaArray[questionIdx][6]);
 		//display answer
 		displayAnswer();
 		}
@@ -142,8 +152,9 @@ function submitAnswer() {
 		$("#question").empty();
 		$("#choices").empty();
 		$("#submit").empty();
-		$("#qresult").text("WRONG!");
-		//display photo at questionIdx
+		$("#qresult").text("WRONG! ");
+		//display photo at questionIdx again
+		$("#images").attr("src",qnaArray[questionIdx][6]);
 		//display answer
 		displayAnswer();
 		}
@@ -157,11 +168,11 @@ function submitAnswer() {
 //function to get correct answer
 
 function displayAnswer() {
-
+	$("#countdown").empty();
 	correctAnswerIdx = qnaArray[questionIdx][5];
 	correctAnswerIdx = parseInt(correctAnswerIdx);
 	var correctAnswerText = qnaArray[questionIdx][correctAnswerIdx];
-	$("#qresult").append(" "+correctAnswerText);
+	$("#qresult").append("<br>"+"The answer was "+correctAnswerText);
 	questionIdx++;
 	setTimeout(displayQ, 3500);
 
