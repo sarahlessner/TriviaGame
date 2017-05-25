@@ -87,6 +87,8 @@ button:focus {
 	margin: 10px;
 }
 
+#correct,
+#incorrect,
 #final-result,
 #qresult {
 	font-family: 'Raleway', sans-serif;
@@ -96,9 +98,13 @@ button:focus {
 	color: #7e12d3;
 }
 
+#imgholder {
+	margin-top: 15px;
+	text-align: center;
+}
 
 #images {
 	max-width: 500px;
 	max-height: 400px;
-	margin-left: 25px;
+	
 }
