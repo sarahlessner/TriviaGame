@@ -1,27 +1,43 @@
 body {
 	margin-left: 15px;
+
 }
 
 h1 {
-	text-align: center;
+	
 }
 
-#rightorwrong,
-#start {
-	text-align: center;
+.start {
+	
 	margin-top: 50px;
 }
 
-button {
-	width: 500px;
-	background: teal;
+.startbtn {
+
+	width: 400px;
+	background: fuchsia;
 	color: white;
 }
 
-#q-and-a {
-	text-align: center;
+
+.radiobtn {
+	margin-right: 5px !important;
+
 }
 
-input {
-	text-align:left;
+#question {
+	margin-bottom: 20px;
+}
+
+.choices {
+	font-weight: normal;
+	margin: 10px;
+}
+
+.submit {
+	width: 400px;
+	background: aqua;
+	color: black;
+	border: 1px solid purple;
+	margin-top: 20px;
 }
