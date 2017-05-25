@@ -6,10 +6,10 @@ body {
 }
 
 h1 {
+	text-align: center;
 	color: #76dada;
 	font-size: 60px;
 	font-family: 'Barrio', cursive;
-	text-align: center;
 }
 
 h2 {
@@ -49,13 +49,11 @@ button:active {
 	border-color: white;
 }
 
-button:focus {
-	outline: chartreuse;
-}
+
 
 #maincontent {
 
-	border: 1px solid black;
+	border: 1px solid #e0e0e0;
 	padding: 30px
 }
 
@@ -99,7 +97,7 @@ button:focus {
 }
 
 #imgholder {
-	margin-top: 15px;
+	margin: 15px;
 	text-align: center;
 }
 
