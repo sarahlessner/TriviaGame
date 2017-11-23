@@ -2,7 +2,6 @@ body {
 	background-image: url("../images/gray.png");
 	font-family: 'Nunito', sans-serif;
 	font-size: 16px;
-
 }
 
 h1 {
@@ -28,7 +27,6 @@ h3 {
 	margin-left: 15px;
 	padding-top: -15px;
 	padding: 20px;
-
 }
 
 button {
@@ -49,16 +47,12 @@ button:active {
 	border-color: white;
 }
 
-
-
 #maincontent {
-
 	border: 1px solid #e0e0e0;
 	padding: 30px
 }
 
 .pawprint {
-
 	margin-top: 70px;
 }
 
@@ -68,10 +62,8 @@ button:active {
 	color: #7e12d3;
 }
 
-
 .radiobtn {
 	margin-right: 5px !important;
-
 }
 
 #question {
@@ -104,5 +96,4 @@ button:active {
 #images {
 	max-width: 500px;
 	max-height: 400px;
-	
 }

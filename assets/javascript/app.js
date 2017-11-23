@@ -1,4 +1,4 @@
-//create a multi dimensional array
+//multi dimensional array
 //questions at index 0
 //choices at 1-4
 //value for correct answer at 5
@@ -17,23 +17,16 @@ var qnaArray = [
 
 ];
 
-//TODO: create an array of photos that will display with correct answer
-
-//create global variables for:
-//index of the question/answer pair
 var questionIdx;
 var correctAnswerIdx;
-//countdown for seconds to countdown time to answer question
 var countdown;
 var timer;
-//variable to store correct/incorrect selection count
 var correct = 0;
 var incorrect = 0;
 
-
 $("button").on("click", beginGame);
 
-//create function for new game click event
+// function for new game click event
 function beginGame() {
 	//set questionIdx to zero
 	questionIdx = 0;
@@ -50,7 +43,7 @@ function beginGame() {
 	displayQ();
 }
 
-//create function for displaying question/answer pair
+//function for displaying question/answer pair
 
 function displayQ() {
 
@@ -66,24 +59,20 @@ function displayQ() {
 	}
 
 	else {
-
 		//create variables to store result of grabbing question/indexes from multi-dimensional array
 		var question = qnaArray[questionIdx][0];
 		//display question and answers to user
 		$("#question").html("<h2>"+question+"</h2>");
-		
+
 		for (i=1; i<(qnaArray[questionIdx].length-2); i++) {
 
 			var ans = qnaArray[questionIdx][i];
 
 			$("#choices").append("<label class='choices'><input type='radio' class='radiobtn' name='answers' value='"+i+"'/>"+ans+"</label><br>");
-		
+
 		};
 		//submit button
 		$("#submit").append("<button class='submit' onclick='submitAnswer()'>Submit</button>");
-
-
-
 		//set countdown variable
 		countdown = 20;
 		$("#countdown").css("font-size", (150-(5*countdown)));
@@ -92,15 +81,13 @@ function displayQ() {
 		//display countdown in html
 		console.log(countdown);
 		$("#countdown").text(countdown);
-		debugger;
 	}
 }
 
 
 //function for the question timer countdown
-	
-function hourGlass() {
 
+function hourGlass() {
 	//decrement "countdown"
 	countdown--;
 	//display "countdown"
@@ -117,11 +104,9 @@ function hourGlass() {
 		incorrect++;
 		displayAnswer();
 	}
-
-
 }
 
-//create an on click event for answer submission
+//function called when answer submission button clicked
 function submitAnswer() {
 	correctAnswerIdx = qnaArray[questionIdx][5];
 	var answers = document.getElementsByName("answers");
@@ -158,15 +143,9 @@ function submitAnswer() {
 		//display answer
 		displayAnswer();
 		}
-
-		
 	}
-// call function that sets a timeout to display new question
-
 };
-
 //function to get correct answer
-
 function displayAnswer() {
 	$("#countdown").empty();
 	correctAnswerIdx = qnaArray[questionIdx][5];
@@ -177,90 +156,3 @@ function displayAnswer() {
 	setTimeout(displayQ, 3500);
 
 };
-
-
-
-
-//function to display final game stats
-
-	//jquery to display incorrect and correct answers count to HTML
-
-	//display new game button for user to play again
-
-
-
-
-
-
-//function to display and adjust various counters
-
-	//clearInterval
-
-	//highlight or otherwise display correct answer and a corresponding photo
-
-	//if countdown is 0
-
-		//display message that time is up
-
-		//increase incorrect answer count
-
-	// else
-
-		//if value of user answer is equal to correct answer array at questionIdx
-
-			//display message that user is correct
-
-			//increase correct answer count
-
-			
-		//else
-
-			//display message that they are incorrect
-
-			//increase incorrect answer count
-
-	//increment questionIdx
-
-	//set timer to display results page or new question after 5 seconds
-
-		//check if all questions have displayed (questionIdx <= # of questions)
-
-			//if they have, then call function that displays final game stats
-
-			//if not, call function that displays a new question/answer set
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
